@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" color="primary">
+    <ion-back-button defaultHref="/" color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="primary">Tabs</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="account">
+        <ion-icon name="persona-outline"></ion-icon>
+        <ion-label>Account</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="contact">
+        <ion-icon name="call-outline"></ion-icon>
+        <ion-label>Contacto</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="settings">
+        <ion-icon name="settings-outline"></ion-icon>
+        <ion-label>Settings</ion-label>
+      </ion-tab-button>
+
+
+
+    </ion-tab-bar>
+  </ion-tabs>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar (click)="_moveDashboard()">
+    <ion-title class="ion-text-center">Footer</ion-title>
+  </ion-toolbar>
+</ion-footer>
