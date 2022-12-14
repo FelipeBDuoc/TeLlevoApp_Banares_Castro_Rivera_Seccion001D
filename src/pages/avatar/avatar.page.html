@@ -1,0 +1,60 @@
+<ion-header >
+  <ion-toolbar color = "primary">
+    <ion-buttons slot="start">
+      <ion-back-button 
+          defaultHref="/"
+          text="Back"
+          
+          mode="ios"></ion-back-button>
+    </ion-buttons >
+    <ion-title >Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+  
+  <ion-content color = "tertiary">
+    <ion-chip color = "secondary" outline="true" *ngFor="let item of [1]">
+      <ion-avatar>
+        <img src="/assets/pee.PNG"/>
+      </ion-avatar>
+      <ion-label >Perfil de usuario</ion-label>
+    </ion-chip> 
+    <ion-list class = 'lista'>
+      <ion-item color = "tertiary" *ngFor="let item of [1]">
+        <ion-avatar slot="end">
+          <img src="/assets/pee.PNG"/>
+        </ion-avatar>
+        <ion-label >Usuario</ion-label>
+      </ion-item>
+    </ion-list>
+    <!-- List of Text Items -->
+<ion-list class = 'lista'>
+  <ion-item color = "tertiary" >
+    <ion-label >Nombre: Aquiles Bailo</ion-label>
+  </ion-item>
+  <ion-item color = "tertiary">
+    <ion-label>Edad: 28</ion-label>
+  </ion-item>
+  <ion-item color = "tertiary">
+    <ion-label>Dirección: La manana</ion-label>
+  </ion-item>
+  <ion-item color = "tertiary">
+    <ion-label>Transporte disponible: si</ion-label>
+  </ion-item>
+  <ion-item color = "tertiary" >
+    <ion-label >Ruta: (por hacer)</ion-label>
+  </ion-item>
+</ion-list>
+
+    <ion-button (click)="Saludo()" expand="full" shape="round">
+      Saludo
+    </ion-button>
+  
+</ion-content >
+<ion-footer >
+  <ion-toolbar (click)="_moveDashboard()" color = "primary" >
+    <ion-title class="ion-text-center">Footer</ion-title>
+  </ion-toolbar>
+</ion-footer>
+  
