@@ -1,0 +1,73 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button 
+        defaultHref="/"
+        text="Back"
+        color="secondary"
+        mode="ios"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="secondary">
+      Registro de vehículos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="primary">
+  <ion-item color="primary">
+    <ion-label position="fixed">Conductor: </ion-label>
+    <ion-input type="text" [(ngModel)]="newDato.nomUsuario" required></ion-input>
+  </ion-item>
+
+  <ion-item color="primary">
+    <ion-label position="fixed">Patente: </ion-label>
+    <ion-input type="text" [(ngModel)]="newDato.email" required></ion-input>
+  </ion-item>
+  
+  <ion-item color="primary">
+    <ion-label position="fixed">Tarifa: </ion-label>
+    <ion-input type="number" [(ngModel)]="newDato.edadUsuario" required></ion-input>
+  </ion-item>
+
+  <ion-item color="primary">
+    <ion-label position="fixed">Destino: </ion-label>
+    <ion-input type="text" [(ngModel)]="newDato.destinoU" required></ion-input>
+  </ion-item>
+
+  <ion-item color="primary">
+    <ion-label position="fixed">Asientos: </ion-label>
+    <ion-input type="number" [(ngModel)]="newDato.asientosLibres" required></ion-input>
+  </ion-item>
+  
+
+  <ion-button color="secondary" (click)="addDatos()" expand="full">
+    Agregar datos
+  </ion-button>
+
+  <ion-list color="primary" #myList >
+    <ion-list-header color="primary">
+      <ion-label color="secondary">Mis Datos</ion-label>
+    </ion-list-header>
+
+    <ion-list>
+      <ion-item-sliding *ngFor="let dato of datos">
+        <ion-item color="primary">
+          <ion-label text-wrap> 
+            <h3 >{{dato.nomUsuario}}</h3>
+            <ion-text color="secondary">
+              <p>{{dato.email}}</p>
+              <p>{{dato.edadUsuario}}</p>
+              <p>{{dato.destinoU}}</p>
+              <p>{{dato.asientosLibres}}</p>
+            </ion-text>
+            <p>{{dato.modified | date: 'short'}}</p>
+          </ion-label>
+        </ion-item>
+        <ion-item-options side="end">
+          <ion-item-option color="secondary" (click)="updateDatos(dato)">Actualizar</ion-item-option>
+         <ion-item-option color="danger" (click)="deleteDatos(dato)">Eliminar</ion-item-option> 
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </ion-list>
+</ion-content>
